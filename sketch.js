@@ -77,7 +77,7 @@ function feedDog(){
 
   //write code here to update food stock and last fed time
 var food_stock_val=foodObj.getFoodStock()
-if(food_stock_val>=0){
+if(food_stock_val<=0){
   foodObj.updateFoodStock(Food_stock_val*0)
 }else{
   foodObj.updateFoodStock(food_stock_val-1)
