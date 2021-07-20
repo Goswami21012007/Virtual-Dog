@@ -83,8 +83,8 @@ if(food_stock_val<=0){
   foodObj.updateFoodStock(foodObj.getFoodStock()-1)
 }
 database.ref('/').update({
-Food:foodObj.getFoodStock()
-last Feed:hour ()
+Food:foodObj.getFoodStock(),
+feedTime:hour ()
 })
 
 
