@@ -4,7 +4,7 @@ var addFood;
 var foodObj;
 
 //create feed and lastFed variable here
-var feed,lastFed;
+var feed,lastFed
 
 function preload(){
 sadDog=loadImage("Dog.png");
@@ -78,11 +78,14 @@ function feedDog(){
   //write code here to update food stock and last fed time
 var food_stock_val=foodObj.getFoodStock()
 if(food_stock_val<=0){
-  foodObj.updateFoodStock(Food_stock_val*0)
+  foodObj.updateFoodStock(foodObj.getFoodStock()*0)
 }else{
-  foodObj.updateFoodStock(food_stock_val-1)
+  foodObj.updateFoodStock(foodObj.getFoodStock()-1)
 }
-
+database.ref('/').update({
+Food:foodObj.getFoodStock()
+last Feed:hour ()
+})
 
 
 }
@@ -90,7 +93,7 @@ if(food_stock_val<=0){
 //function to add food in stock
 function addFoods(){
   foodS++;
-  database.ref('/').update({
+  database.ref('/').set({
     Food:foodS
   })
 }
